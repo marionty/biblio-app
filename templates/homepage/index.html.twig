@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomePageController!{% endblock %}
+
+{% block body %}
+
+{% include "partials/_hero.html.twig" %}
+
+<div class="mt-5">
+    <h2 class="text-center">Lisez nos derniers articles <span class="badge rounded-pill bg-danger">Nouveau</span></h2>
+</div>
+{% include "partials/_cards.html.twig" %}
+
+{% endblock %}
