@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\BookRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 class Book
@@ -15,6 +16,7 @@ class Book
     private ?int $id = null;
 
     #[ORM\Column]
+    #[Assert\Range(min:99999999, max:9999999999999)]
     private ?int $isbn = null;
 
     #[ORM\Column(length: 150)]

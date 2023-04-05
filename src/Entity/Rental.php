@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\RentalRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RentalRepository::class)]
 class Rental
@@ -15,9 +16,11 @@ class Rental
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\Date()]
     private ?\DateTimeInterface $start = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Assert\Date()]
     private ?\DateTimeInterface $end = null;
 
     #[ORM\Column]
